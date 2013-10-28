@@ -1,0 +1,446 @@
+// Variables.less
+// Variables to customize the look and feel of Bootstrap
+// -----------------------------------------------------
+
+// GLOBAL VALUES
+// --------------------------------------------------
+
+// Grays
+// -------------------------
+@grayDarker:            #222;
+@grayDark:              #555;
+@gray:                  #808080;
+@grayLight:             #aaa;
+@grayLighter:           #eee;
+@white:                 #f9f9f9;
+
+// v3.0
+@gray-darker:            lighten(#000, 13.5%); // #222
+@gray-dark:              lighten(#000, 20%);   // #333
+@gray:                   lighten(#000, 33.5%); // #555
+@gray-light:             lighten(#000, 60%);   // #999
+@gray-lighter:           lighten(#000, 93.5%); // #eee
+
+
+// Brand colors
+// -------------------------
+@brandPrimary:         rgb(207,83,0);
+//@brandPrimary:         rgb(162,65,32);
+
+//@brandPrimary:         #ed1847;
+//@brandPrimary:         #0091d0;
+//@brandPrimary:         #003459;
+@brandSuccess:         #85bd3c;
+@brandWarning:         #ffde2f;
+@brandDanger:          #ed1847;
+@brandInfo:            #0091d0;
+
+
+// Scaffolding
+// -------------------------
+@bodyBg:                @grayDarker;
+@textColor:             #444;
+@borderColor:           #ddd;
+
+
+// Links
+// -------------------------
+@linkColor:             @brandPrimary;
+@linkColorHover:        darken(@linkColor, 15%);
+
+
+// Typography
+// -------------------------
+
+// Families
+@sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+@serifFontFamily:       Georgia, "Times New Roman", Times, serif;
+@slabFontFamily:        "Aleo-Regular", "Rockwell", "Times New Roman", Times, serif;
+@slabFontBoldFamily:    "Aleo-Bold", "Rockwell", "Times New Roman", Times, serif;
+@slabFontLightFamily:   "Aleo-Light", "Rockwell", "Times New Roman", Times, serif;
+@monoFontFamily:        "Menlo", "Monaco", "Consolas", "Courier New", monospace;
+@baseFontFamily:        @sansFontFamily;
+
+// Size
+@baseFontSize:          14px;
+@fontSizeLarge:         (@baseFontSize * 1.25); // ~18px
+@fontSizeSmall:         (@baseFontSize * 0.85); // ~12px
+@fontSizeMini:          (@baseFontSize * 0.75); // ~11px
+
+// Line Height
+@baseLineHeight:        @baseFontSize * 1.618;
+
+// Headings
+@headingsFontFamily:    "SunBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@headingsFontWeight:    500;    // instead of browser default, bold
+@headingsLineHeight:    1.2; // measure in ems
+@headingsColor:         #444; // empty to use BS default, @textColor
+
+
+// Components
+// -------------------------
+// Based on 14px font-size and 22.652px line-height
+
+@paddingLarge:          11px 19px; // 44px
+@paddingSmall:          2px 10px;  // 26px
+@paddingMini:           1px 6px;   // 24px
+
+@baseBorderRadius:      4px;
+@borderRadiusLarge:     6px;
+@borderRadiusSmall:     3px;
+
+@componentActiveBg:     @brandPrimary;
+
+
+// Tables
+// -------------------------
+@tableBg:                   transparent; // overall background-color
+@tableBgAccent:             #f9f9f9; // for striping
+@tableBgHover:              #f5f5f5; // for hover
+@tableBorderColor:               @borderColor; // table and cell border
+
+
+// Buttons
+// -------------------------
+@btnColor:                          #fff;
+@btnBg:                             #a7a9aa;
+@btnBorder:                         @btnBg;
+
+@btnPrimaryBg:                      @brandPrimary;
+@btnPrimaryBorder:                  @btnPrimaryBg;
+
+@btnSuccessBg:                      @brandSuccess;
+@btnSuccessBorder:                  @btnSuccessBg;
+
+@btnWarningBg:                      @brandWarning;
+@btnWarningBorder:                  @btnWarningBg;
+
+@btnDangerBg:                       @brandDanger;
+@btnDangerBorder:                   @btnDangerBg;
+
+@btnInfoBg:                         @brandInfo;
+@btnInfoBorder:                     @btnInfoBg;
+
+@btnInverseBg:                      #444;
+@btnInverseBorder:                  @btnInverseBg;
+
+
+// Forms
+// -------------------------
+@inputBg:                       #fff;
+@inputDisabledBg:               @grayLighter;
+
+@inputBorder:                   @borderColor;
+@inputBorderRadius:             @baseBorderRadius;
+
+@inputHeight:                   @baseLineHeight + 14px; // base line-height + 12px vertical padding + 2px top/bottom border
+@inputHeightLarge:              @baseLineHeight + 24px; // base line-height + 22px vertical padding + 2px top/bottom border
+@inputHeightSmall:              @baseLineHeight + 6px;  // base line-height + 4px vertical padding + 2px top/bottom border
+@selectHeight:                  @baseLineHeight + 14px; // base line-height + 12px vertical padding + 2px top/bottom border
+
+@formActionsBg:        #f5f5f5;
+
+// Dropdowns
+// -------------------------
+@dropdownBg:                    #fff;
+@dropdownBorder:                rgba(0,0,0,.15);
+@dropdownDividerTop:            #e5e5e5;
+@dropdownDividerBottom:         #fff;
+
+@dropdownLinkColorActive:       @dropdownLinkColor;
+@dropdownLinkBgActive:          @componentActiveBg;
+
+@dropdownLinkColor:             @grayDark;
+@dropdownLinkColorHover:        #fff;
+@dropdownLinkBgHover:           @dropdownLinkBgActive;
+
+
+// COMPONENT VARIABLES
+// --------------------------------------------------
+
+// Z-index master list
+// -------------------------
+// Used for a bird's eye view of components dependent on the z-axis
+// Try to avoid customizing these :)
+
+@zindexDropdown:          1000;
+@zindexPopover:           1010;
+@zindexTooltip:           1020;
+@zindexFixedNavbar:       1030;
+@zindexModalBackdrop:     1040;
+@zindexModal:             1050;
+
+
+// Glyphicons font path
+// -------------------------
+@glyphicons-font-path:          "fonts";
+
+
+// Navbar
+// -------------------------
+
+// Navbar basics
+@navbarHeight:                      50px;
+@navbarText:                        #777;
+@navbarBg:                          #eee;
+
+// Navbar links
+@navbarLinkColor:                   #777;
+@navbarLinkHoverColor:              #333;
+@navbarLinkHoverBg:                 transparent;
+@navbarLinkActiveColor:             #555;
+@navbarLinkActiveBg:                darken(@navbarBg, 10%);
+@navbarLinkDisabledColor:           #ccc;
+@navbarLinkDisabledBg:              transparent;
+
+// Navbar brand label
+@navbarBrandColor:                  @navbarLinkColor;
+@navbarBrandHoverColor:             darken(@navbarLinkColor, 10%);
+@navbarBrandHoverBg:                transparent;
+
+// Inverted navbar
+@navbarInverseText:                 @grayLight;
+@navbarInverseBg:                   #222;
+
+// Inverted brand label links
+@navbarInverseLinkColor:                 @grayLight;
+@navbarInverseLinkHoverColor:            #fff;
+@navbarInverseLinkHoverBg:               transparent;
+@navbarInverseLinkActiveColor:           @navbarInverseLinkHoverColor;
+@navbarInverseLinkActiveBg:              darken(@navbarInverseBg, 10%);
+@navbarInverseLinkDisabledColor:         #444;
+@navbarInverseLinkDisabledBg:            transparent;
+
+// Inverted navbar brand label
+@navbarInverseBrandColor:           @navbarInverseLinkColor;
+@navbarInverseBrandHoverColor:      #fff;
+@navbarInverseBrandHoverBg:         transparent;
+
+// Inverted navbar search
+// Normal navbar needs no special styles or vars
+@navbarInverseSearchBg:                  lighten(@navbarInverseBg, 25%);
+@navbarInverseSearchBgFocus:             #fff;
+@navbarInverseSearchBorder:              @navbarInverseBg;
+@navbarInverseSearchPlaceholderColor:    #ccc;
+
+
+// Pagination
+// -------------------------
+@paginationBg:                #fff;
+@paginationBorder:                    @borderColor;
+@paginationActiveBg:          #f5f5f5;
+
+
+// Jumbotron
+// -------------------------
+@jumbotronBg:                  @grayLighter;
+@jumbotronHeadingColor:        inherit;
+@jumbotronLeadColor:           inherit;
+
+
+// Form states and alerts
+// -------------------------
+@warningText:             #c09853;
+@warningBg:               #fcf8e3;
+@warningBorder:           darken(spin(@warningBg, -10), 3%);
+
+@dangerText:              #b94a48;
+@dangerBg:                #f2dede;
+@dangerBorder:            darken(spin(@dangerBg, -10), 3%);
+
+@successText:             #468847;
+@successBg:               #dff0d8;
+@successBorder:           darken(spin(@successBg, -10), 5%);
+
+@infoText:                #3a87ad;
+@infoBg:                  #d9edf7;
+@infoBorder:              darken(spin(@infoBg, -10), 7%);
+
+
+// Tooltips and popovers
+// -------------------------
+@tooltipColor:            #fff;
+@tooltipBackground:       #000;
+@tooltipArrowWidth:       5px;
+@tooltipArrowColor:       @tooltipBackground;
+
+@popoverBackground:       #fff;
+@popoverArrowWidth:       10px;
+@popoverArrowColor:       #fff;
+@popoverTitleBackground:  darken(@popoverBackground, 3%);
+
+// Special enhancement for popovers
+@popoverArrowOuterWidth:  @popoverArrowWidth + 1;
+@popoverArrowOuterColor:  rgba(0,0,0,.25);
+
+
+// Labels
+// -------------------------
+@labelSuccessBg:           @brandSuccess;
+@labelInfoBg:              @brandInfo;
+@labelWarningBg:           @brandWarning;
+@labelDangerBg:            @brandDanger;
+
+
+// Modals
+// -------------------------
+@modalInnerPadding:         20px;
+
+@modalTitlePadding:         15px;
+@modalTitleLineHeight:      @baseLineHeight;
+
+// Alerts
+// -------------------------
+@alertBg:                   @warningBg;
+@alertText:                 @warningText;
+@alertBorder:               @warningBorder;
+@alertBorderRadius:         @baseBorderRadius;
+
+@alertSuccessBg:            @successBg;
+@alertSuccessText:          @successText;
+@alertSuccessBorder:        @successBorder;
+
+@alertDangerBg:             @dangerBg;
+@alertDangerText:           @dangerText;
+@alertDangerBorder:         @dangerBorder;
+
+@alertInfoBg:               @infoBg;
+@alertInfoText:             @infoText;
+@alertInfoBorder:           @infoBorder;
+
+
+// Progress bars
+// -------------------------
+@progressBg:               #f5f5f5;
+@progressBarBg:            @brandPrimary;
+@progressBarSuccessBg:     @brandSuccess;
+@progressBarWarningBg:     @brandWarning;
+@progressBarDangerBg:      @brandDanger;
+@progressBarInfoBg:        @brandInfo;
+
+
+// List group
+// -------------------------
+@listGroupBg:              #fff;
+@listGroupBorder:          @borderColor;
+@listGroupBorderRadius:    @baseBorderRadius;
+
+@listGroupHoverBg:         #f5f5f5;
+@listGroupActiveText:      #fff;
+@listGroupActiveBg:        @componentActiveBg;
+@listGroupActiveBorder:    @listGroupActiveBg;
+
+// Panels
+// -------------------------
+@panelBg:                  #fff;
+@panelBorder:              @borderColor;
+@panelBorderRadius:        @baseBorderRadius;
+@panelHeadingBg:           #f5f5f5;
+
+@panelPrimaryText:         #fff;
+@panelPrimaryBorder:       @brandPrimary;
+@panelPrimaryHeadingBg:    @brandPrimary;
+
+@panelSuccessText:         @successText;
+@panelSuccessBorder:       @successBorder;
+@panelSuccessHeadingBg:    @successBg;
+
+@panelWarningText:         @warningText;
+@panelWarningBorder:       @warningBorder;
+@panelWarningHeadingBg:    @warningBg;
+
+@panelDangerText:          @dangerText;
+@panelDangerBorder:        @dangerBorder;
+@panelDangerHeadingBg:     @dangerBg;
+
+@panelInfoText:            @infoText;
+@panelInfoBorder:          @infoBorder;
+@panelInfoHeadingBg:       @infoBg;
+
+
+// Thumbnails
+// -------------------------
+@thumbnailCaptionColor:    @textColor;
+@thumbnailBg:              @bodyBg;
+@thumbnailBorder:          @borderColor;
+@thumbnailBorderRadius:    @baseBorderRadius;
+
+
+// Wells
+// -------------------------
+@wellBg:                   #f5f5f5;
+
+
+// Hr border color
+// -------------------------
+@hrBorder:                 @grayLighter;
+
+
+// Horizontal forms & lists
+// -------------------------
+@horizontalComponentOffset: 180px;
+
+
+// Media queries breakpoints
+// --------------------------------------------------
+@siteMinWidth:              320px;
+@screenPhone:               480px;
+@screenSmallTablet:         640px;
+@screenTablet:              768px;
+@screenDesktop:             960px;
+@screenLargeDesktop:        1140px;
+@siteMaxWidth:              1600px;
+
+// So media queries don't overlap when required, provide a maximum
+@screenPhoneMax:            (@screenSmallTablet - 1);
+@screenSmallTabletMax:      (@screenTablet - 1);
+@screenTabletMax:           (@screenDesktop - 1);
+@screenDesktopMax:          (@screenLargeDesktop - 1);
+@screenLargeDesktopMax:     (@siteMaxWidth - 1);
+
+// Other breakpoints
+@tableBreakpoint:           @screenTablet; // Responsive Tables
+@gridFloatBreakpoint:       @screenTablet;
+@grid-float-breakpoint:     @screenTablet;
+
+
+
+// Grid system
+// --------------------------------------------------
+
+@siteDefaultWidth:        1480px;
+
+// columns and gutters
+@gridColumns:             12;
+@gridGutterWidth:         40px;
+
+// calculations
+@pxColumnWidth:           @siteDefaultWidth/@gridColumns;
+@gridColumnWidth:         percentage(@pxColumnWidth/@siteDefaultWidth);
+
+
+// Grid system bootstrap v3
+// --------------------------------------------------
+
+@grid-columns:              12;    // Number of columns in the grid system
+@grid-gutter-width:         40px;  // Padding, to be divided by two and applied to the left and right of all columns
+
+
+
+
+
+
+
+// Accent colors
+// -------------------------
+@blue:                  #049cdb;
+@blueDark:              #0064cd;
+@green:                 #46a546;
+@red:                   #9d261d;
+@yellow:                #ffc40d;
+@orange:                #f89406;
+@pink:                  #c3325f;
+@purple:                #7a43b6;
+// Input placeholder text color
+// -------------------------
+@placeholderText:         @grayLight;

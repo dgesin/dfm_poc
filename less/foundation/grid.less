@@ -1,0 +1,81 @@
+//
+// Grid
+// --------------------------------------------------
+
+// Set row and container styles (row acts as a container when without a container)
+.container, .row {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: @siteMaxWidth;
+  min-width: @siteMinWidth;
+  .clearfix();
+}
+
+// Nested rows
+.row .row { 
+	width: auto; 
+	max-width: none; 
+	min-width: 0; 
+	margin: 0 -15px; 
+}
+.row.collapse [class*="span"] { 
+	padding: 0; 
+}
+.row .row.collapse { 
+	margin: 0; 
+}
+
+// When a row is in a container, the row adheres to container
+.container > .row {
+	width: 100%;
+	max-width: none;
+	min-width: none;
+	margin: 0;
+}
+
+// Create global span styles
+[class*="span"] { 
+	float: left; 
+	min-height: 1px; 
+	padding: 0 @gridGutterWidth/2;
+	position: relative; 
+}
+[class*="span"].centered, 
+[class*="span"].centered { 
+	float: none; 
+	margin: 0 auto; 
+}
+[class*="span"] + [class*="span"]:last-child { 
+	float: right; 
+}
+[class*="span"] + [class*="span"].end { 
+	float: left; 
+}
+
+#grid > .core();
+
+// Responsive: Tablets and up
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 728px;
+  }
+}
+
+// Responsive: Desktops and up
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 940px;
+  }
+}
+
+// Responsive: Large desktops and up
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
+
+// Reset utility classes due to specificity
+[class*="span"].pull-right {
+  float: right;
+}

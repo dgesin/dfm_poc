@@ -1,0 +1,70 @@
+//
+// Labels
+// --------------------------------------------------
+
+.label {
+  display: inline;
+  padding: .25em .6em;
+  font-size: 75%;
+  font-weight: 500;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  background-color: @grayLight;
+  border-radius: .25em;
+
+  // Add hover effects, but only for links 
+  &[href] {
+    &:hover,
+    &:focus {
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+      background-color: darken(@grayLight, 10%);
+    }
+  }
+}
+
+// Colors
+// Contextual variations (linked labels get darker on :hover)
+.label-danger {
+  background-color: @labelDangerBg;
+  &[href] {
+    &:hover, 
+    &:focus {
+      background-color: darken(@labelDangerBg, 10%);
+    }
+  }
+}
+
+.label-success {
+  background-color: @labelSuccessBg;
+  &[href] {
+    &:hover,
+    &:focus {
+      background-color: darken(@labelSuccessBg, 10%);
+    }
+  }
+}
+
+.label-warning {
+  background-color: @labelWarningBg;
+  &[href] {
+    &:hover,
+    &:focus {
+      background-color: darken(@labelWarningBg, 10%);
+    }
+  }
+}
+
+.label-info {
+  background-color: @labelInfoBg;
+  &[href] {
+    &:hover,
+    &:focus {
+      background-color: darken(@labelInfoBg, 10%);
+    }
+  }
+}
