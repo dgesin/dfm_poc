@@ -159,6 +159,7 @@ Handlebars.registerHelper('unless_blank', function(item, block) {
 			});
 		}); //getJSON
 	}
+<<<<<<< HEAD
 	
 	
 	// <a href="link to story here" id="storyID" onclick="loadArticle(storyID)">Link</a>
@@ -179,6 +180,8 @@ Handlebars.registerHelper('unless_blank', function(item, block) {
 		}); //getJSON
 	}
 	
+=======
+>>>>>>> 57ff1aaf8c4c7618002b47daa07c1ecce90137c1
 	function loadAltNews(xmlFeed) {
 		var source, template, html;
 		var $target = $('#popular').find('.feed');

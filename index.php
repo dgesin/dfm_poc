@@ -27,6 +27,7 @@
 			</section> <!-- #picks -->
 		</div> <!-- .tab-content -->
 	</div> <!-- .content-panel -->
+<<<<<<< HEAD
 	<div id="article-page"></div>
 <?php endif; ?>
 </div> <!-- #content -->
@@ -55,3 +56,9 @@
 	transition: all 8.0s ease-in;x
 }
 </style>
+=======
+<?php endif; ?>
+</div> <!-- #content -->
+<?php ($mobile) ? require_once('temps/handlebars/mobile.php') : require_once('temps/handlebars/desktop.php'); ?>
+<?php ($mobile) ? require_once('temps/mobile/footer.php') : require_once('temps/footer.php'); ?>
+>>>>>>> 57ff1aaf8c4c7618002b47daa07c1ecce90137c1
