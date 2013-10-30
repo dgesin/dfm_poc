@@ -5,15 +5,12 @@ if(isset($_REQUEST['feed'])) {
 	$feed_url = 'http://extras.denverpost.com/media/MRSS/Breaking_News_230605.xml';
 }
 
-<<<<<<< HEAD
  // /inc/feed.php?feed=somefeedurl&id=ci_225372563
 
 // $_REQUEST['id']
 	
 
 
-=======
->>>>>>> 57ff1aaf8c4c7618002b47daa07c1ecce90137c1
 // RECEIVE FILE AND CLEAN
 $source = file_get_contents( $feed_url );
 $source = str_replace(":encoded", '', $source);
@@ -30,10 +27,7 @@ $articles = array();
 foreach ($xml->channel->item as $article) {
 array_push($articles, 
 	array( 'title' => trim($article->title), 
-<<<<<<< HEAD
 			'unique' => (string) findID($article->link),
-=======
->>>>>>> 57ff1aaf8c4c7618002b47daa07c1ecce90137c1
 			'pub_date' => processTime($article->pubDate), 
 			'byline' => getAuthorName($article->dc),
 			'property' => getPropertyName($article->dc),
@@ -47,15 +41,12 @@ array_push($articles,
 }
 $json = '{ "articles" :' . json_encode($articles) . '}';
 
-<<<<<<< HEAD
 function findID($id) {
 	$arr = explode("ci_", $id);
 	$arr_id = explode("/", $arr[1]);
 	return $arr_id[0];
 }
 
-=======
->>>>>>> 57ff1aaf8c4c7618002b47daa07c1ecce90137c1
 function getAuthorName($str) {
 	$str = (string) $str;
 	$str_arr = explode('<br>', $str);
