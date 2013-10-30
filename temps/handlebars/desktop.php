@@ -1,8 +1,9 @@
+<!-- this template populates the phone part :: left rail -->
 <script id="latesttpl" type="text/x-handlebars-template">
 	<ul class="story-feed">
 	{{#articles}}
 		<li>
-		<a href="{{link}}">
+		<a href="{{link}}" id="{{unique}}" onclick="loadArticle(e, {{id}})" >
 			<h5>{{title}}</h5>
 			<span class="time">{{last_update}}</span>
 		</a>
@@ -10,14 +11,17 @@
 	{{/articles}}
 	</ul>
 </script>
+
+<!-- this template populates the center column -->
 <script id="commtemp" type="text/x-handlebars-template">
 	<ul class="story-feed">
 	{{#articles}}
 		<li>
+		{{unique}}
 		{{#unless_blank media}}
 		  <img src="{{media}}" alt="Photo of {{title}}" width="100%" style="margin-top:20px;"/>
 		{{/unless_blank}}
-		<a href="{{link}}">
+		<a href="{{link}}" id="{{unique}}" onclick="loadArticle(e, {{unique}})" >
 			<h3>{{title}}</h3>
 		</a>
 		<p class="meta">
@@ -45,6 +49,8 @@
 	{{/articles}}
 	</ul>
 </script>
+
+<!-- this template populates the right rail -->
 <script id="editortemp" type="text/x-handlebars-template">
 	<ul class="story-feed">
 	{{#articles}}
@@ -52,7 +58,7 @@
 		{{#unless_blank media}}
 		  <img src="{{media}}" alt="Photo of {{title}}" width="100%" style="margin-top:20px;"/>
 		{{/unless_blank}}
-		<a href="{{link}}">
+		<a href="{{link}}" id="{{unique}}" onclick="loadArticle(e, {{unique}})" >
 			<h2>{{title}}</h2>
 		</a>
 		<p class="excerpt">{{excerpt}}</p>
@@ -80,4 +86,13 @@
 		</li>
 	{{/articles}}
 	</ul>
+</script>
+
+<script id="articletmp" type="text/x-handlebars-template">
+    {{article}}
+	   <h1>{{title}}</h1>
+	   <div class="body-copy">
+	     {{ bodyEncoded }}
+	   </div>
+	{{/article}}
 </script>

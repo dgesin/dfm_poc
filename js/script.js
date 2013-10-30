@@ -159,6 +159,26 @@ Handlebars.registerHelper('unless_blank', function(item, block) {
 			});
 		}); //getJSON
 	}
+	
+	
+	// <a href="link to story here" id="storyID" onclick="loadArticle(storyID)">Link</a>
+	// find way to get id to load the story in OR find some way to pass in the description and title fields of the existing object to the function
+	
+	function loadArticle(e, id) {
+		e.preventDefault();
+		var source, template, html;
+		var $target = $('#article-page');
+		$target.addClass('active');
+		$target.html('<div class="loading"></div>');
+		xF = (xmlFeed == undefined) ? baseURL + '/inc/get-article.php?x=' + id : xmlFeed;
+		$.getJSON(id, function(data) {
+			source  = $("#articletmp").html(),
+			template = Handlebars.compile(source);
+			html = template(data);
+			$target.html(html);
+		}); //getJSON
+	}
+	
 	function loadAltNews(xmlFeed) {
 		var source, template, html;
 		var $target = $('#popular').find('.feed');
