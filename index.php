@@ -44,14 +44,14 @@
 	background:white;
 	z-index:20000;
 	right: -100%;
-	-webkit-transition: all 0.2s ease-in;
-	-moz-transition: all 0.2s ease-in;
-	transition: all 0.2s ease-in;
+	-webkit-transition: all 8.0s ease-in;
+	-moz-transition: all 8.0s ease-in;
+	transition: all 8.0s ease-in;
 }
 #article-page.active {
 	right:0;
-	-webkit-transition: all 0.2s ease-in;
-	-moz-transition: all 0.2s ease-in;
-	transition: all 0.2s ease-in;
+	-webkit-transition: all 8.0s ease-in;
+	-moz-transition: all 8.0s ease-in;
+	transition: all 8.0s ease-in;x
 }
-</style
+</style>
