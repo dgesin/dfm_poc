@@ -1,0 +1,250 @@
+//
+// Tables
+// --------------------------------------------------
+
+
+// BASE TABLES
+// -----------------
+
+table {
+  max-width: 100%;
+  background-color: @tableBg;
+  border-collapse: collapse; // n2.1.1
+  border-spacing: 0; // n2.1.1
+}
+th {
+  text-align: left;
+}
+
+// BASELINE STYLES
+// ---------------
+
+.table, 
+table.responsive {
+  width: 100%;
+  margin-bottom: @baseLineHeight;
+  // Cells
+  thead > tr > th,
+  tbody > tr > th,
+  thead > tr > td,
+  tbody > tr > td {
+    padding: 8px;
+    line-height: @baseLineHeight;
+    vertical-align: top;
+    border-top: 1px solid @tableBorderColor;
+  }
+  // Bottom align for column headings
+  thead > tr > th {
+    vertical-align: bottom;
+  }
+  // Remove top border from thead by default
+  caption + thead tr:first-child th,
+  caption + thead tr:first-child td,
+  colgroup + thead tr:first-child th,
+  colgroup + thead tr:first-child td,
+  thead:first-child tr:first-child th,
+  thead:first-child tr:first-child td {
+    border-top: 0;
+  }
+  // Account for multiple tbody instances
+  tbody + tbody {
+    border-top: 2px solid @tableBorderColor;
+  }
+
+  // Nesting
+  .table {
+    background-color: @bodyBg;
+  }
+}
+
+
+
+// CONDENSED TABLE W/ HALF PADDING
+// -------------------------------
+
+.table-condensed {
+  font-size: @baseFontSize - 1;
+  thead > tr > th,
+  tbody > tr > th,
+  thead > tr > td,
+  tbody > tr > td {
+    padding: 4px 5px;
+    line-height: @baseLineHeight/2;
+  }
+}
+
+
+// BORDERED VERSION
+// ----------------
+
+.table-bordered {
+  border: 1px solid @tableBorderColor;
+  border-collapse: separate; // Done so we can round those corners!
+  border-left: 0;
+  border-radius: @baseBorderRadius;
+  thead > tr > th,
+  tbody > tr > th,
+  thead > tr > td,
+  tbody > tr > td {
+    border-left: 1px solid @tableBorderColor;
+  }
+  // Prevent a double border
+  caption + thead tr:first-child th,
+  caption + tbody tr:first-child th,
+  caption + tbody tr:first-child td,
+  colgroup + thead tr:first-child th,
+  colgroup + tbody tr:first-child th,
+  colgroup + tbody tr:first-child td,
+  thead:first-child tr:first-child th,
+  tbody:first-child tr:first-child th,
+  tbody:first-child tr:first-child td {
+    border-top: 0;
+  }
+  // For first th/td in the first row in the first thead or tbody
+  thead:first-child tr:first-child > th:first-child,
+  tbody:first-child tr:first-child > td:first-child,
+  tbody:first-child tr:first-child > th:first-child {
+    border-top-left-radius: @baseBorderRadius;
+  }
+  // For last th/td in the first row in the first thead or tbody
+  thead:first-child tr:first-child > th:last-child,
+  tbody:first-child tr:first-child > td:last-child,
+  tbody:first-child tr:first-child > th:last-child {
+    border-top-right-radius: @baseBorderRadius;
+  }
+  // For first th/td (can be either) in the last row in the last thead, tbody, and tfoot
+  thead:last-child tr:last-child > th:first-child,
+  tbody:last-child tr:last-child > td:first-child,
+  tbody:last-child tr:last-child > th:first-child,
+  tfoot:last-child tr:last-child > td:first-child,
+  tfoot:last-child tr:last-child > th:first-child {
+    border-bottom-left-radius: @baseBorderRadius;
+  }
+  // For last th/td (can be either) in the last row in the last thead, tbody, and tfoot
+  thead:last-child tr:last-child > th:last-child,
+  tbody:last-child tr:last-child > td:last-child,
+  tbody:last-child tr:last-child > th:last-child,
+  tfoot:last-child tr:last-child > td:last-child,
+  tfoot:last-child tr:last-child > th:last-child {
+    border-bottom-right-radius: @baseBorderRadius;
+  }
+
+  // Clear border-radius for first and last td in the last row in the last tbody for table with tfoot
+  tfoot + tbody:last-child tr:last-child td:first-child {
+    border-bottom-left-radius: 0;
+  }
+  tfoot + tbody:last-child tr:last-child td:last-child {
+    border-bottom-right-radius: 0;
+  }
+
+
+  // Special fixes to round the left border on the first td/th
+  caption + thead tr:first-child th:first-child,
+  caption + tbody tr:first-child td:first-child,
+  colgroup + thead tr:first-child th:first-child,
+  colgroup + tbody tr:first-child td:first-child {
+    border-top-left-radius: @baseBorderRadius;
+  }
+  caption + thead tr:first-child th:last-child,
+  caption + tbody tr:first-child td:last-child,
+  colgroup + thead tr:first-child th:last-child,
+  colgroup + tbody tr:first-child td:last-child {
+    border-top-right-radius: @baseBorderRadius;
+  }
+
+}
+
+
+
+
+// ZEBRA-STRIPING
+// --------------
+
+// Default zebra-stripe styles (alternating gray and transparent backgrounds)
+.table-striped {
+  tbody {
+    > tr:nth-child(odd) > td,
+    > tr:nth-child(odd) > th {
+      background-color: @tableBgAccent;
+    }
+  }
+}
+
+
+// HOVER EFFECT
+// ------------
+// Placed here since it has to come after the potential zebra striping
+.table-hover {
+  tbody {
+    tr:hover > td,
+    tr:hover > th {
+      background-color: @tableBgHover;
+    }
+  }
+}
+
+
+// TABLE CELL SIZING
+// -----------------
+
+// Reset default table behavior
+table col[class^="span"] {
+  float: none;
+  display: table-column;
+}
+table td[class^="span"],
+table th[class^="span"] {
+  float: none;
+  display: table-cell;
+}
+
+// TABLE BACKGROUNDS
+// -----------------
+// Exact selectors below required to override .table-striped
+
+.table tbody tr {
+  > td.success,
+  > th.success,
+  &.success > td {
+    background-color: @successBg;
+  }
+  > td.danger,
+  > th.danger,
+  &.danger > td{
+    background-color: @dangerBg;
+  }
+  > td.warning,
+  > th.warning,
+  &.warning > td {
+    background-color: @warningBg;
+  }
+  > td.info:hover,
+  > th.info:hover,
+  &.info > td {
+    background-color: @infoBg;
+  }
+}
+
+// Hover states for .table-hover
+.table-hover tbody tr {
+  > td.success:hover,
+  > th.success:hover,
+  &.success:hover > td {
+    background-color: darken(@successBg, 5%);
+  }
+  > td.danger:hover,
+  > th.danger:hover,
+  &.danger:hover > td {
+    background-color: darken(@dangerBg, 5%);
+  }
+  > td.warning:hover,
+  > th.warning:hover,
+  &.warning:hover > td {
+    background-color: darken(@warningBg, 5%);
+  }
+  > td.info:hover,
+  > th.info:hover,
+  &.info:hover > td {
+    background-color: darken(@infoBg, 5%);
+  }
+}

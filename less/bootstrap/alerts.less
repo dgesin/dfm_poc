@@ -1,0 +1,97 @@
+//
+// Alerts
+// --------------------------------------------------
+
+
+// Base styles
+// -------------------------
+
+.alert {
+  padding: 8px 35px 8px 14px;
+  margin-bottom: @baseLineHeight;
+  color: @alertText;
+  background-color: @alertBg;
+  border: 1px solid @alertBorder;
+  border-radius: @alertBorderRadius;
+  // Headings for larger alerts
+  h4 {
+    margin-top: 0;
+    // Specified for the h4 to prevent conflicts of changing @headingsColor
+    color: inherit;
+  }
+  // Match the hr to the border of the alert
+  hr {
+    border-top-color: darken(@alertBorder, 5%);
+  }
+  // Inherit color for immediate links and bolden them some
+  > a,
+  > p > a {
+    font-weight: 500;
+    color: darken(@alertText, 10%);
+  }
+
+  // Adjust close link position
+  .close {
+    position: relative;
+    top: -2px;
+    right: -21px;
+    color: inherit;
+  }
+}
+
+
+// Alternate styles
+// -------------------------
+
+.alert-success {
+  background-color: @alertSuccessBg;
+  border-color: @alertSuccessBorder;
+  color: @alertSuccessText;
+  hr {
+    border-top-color: darken(@alertSuccessBorder, 5%);
+  }
+  > a,
+  > p > a {
+    color: darken(@alertSuccessText, 10%);
+  }
+}
+.alert-danger,
+.alert-error {
+  background-color: @alertDangerBg;
+  border-color: @alertDangerBorder;
+  color: @alertDangerText;
+  hr {
+    border-top-color: darken(@alertDangerBorder, 5%);
+  }
+  > a,
+  > p > a {
+    color: darken(@alertDangerText, 10%);
+  }
+}
+.alert-info {
+  background-color: @alertInfoBg;
+  border-color: @alertInfoBorder;
+  color: @alertInfoText;
+  hr {
+    border-top-color: darken(@alertInfoBorder, 5%);
+  }
+  > a,
+  > p > a {
+    color: darken(@alertInfoText, 10%);
+  }
+}
+
+// Block alerts
+// -------------------------
+
+.alert-block {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.alert-block > p,
+.alert-block > ul {
+  margin-bottom: 0;
+}
+.alert-block p + p {
+  margin-top: 5px;
+}

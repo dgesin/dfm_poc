@@ -1,0 +1,108 @@
+// HOME PAGE ZONES
+[class*="zone"]{
+	min-width: @siteMinWidth;
+	padding: @margin @margin @gridGutterWidth;
+	@media (min-width: @screenSmallTablet) {
+		float: left;
+	}
+	@media (max-width: @screenSmallTablet) {
+		padding-top: 0;
+		.page-header {
+			display: none;
+		}
+	}
+}
+.zone-one {
+	padding-left: 0;
+	padding-right: 0;
+	.page-header {
+		padding-left: @margin;
+	}
+	.story-feed {
+		> li {
+			> a {
+				color: @grayDark;
+				display: block;
+				padding-left: @margin;
+				padding-right: @margin;
+				h5 {
+					margin-right: @margin;
+				}
+			}
+		}
+	}
+	@media (max-width: @screenSmallTablet) {
+		.story-feed {
+			> li {
+				> a {
+					&:hover {
+						color: @textColor;
+						text-decoration: none;
+						background: whiteSmoke;
+					}
+				}
+			}
+		}
+	}
+	@media (min-width: @screenSmallTablet) {
+		width: @siteMinWidth; 
+		z-index: @zoneIndexTop;
+		padding: @margin @margin @gridGutterWidth * 2;
+		.page-header {
+			padding-left: 0;
+		}
+		.story-feed {
+			> li {
+				> a {
+					padding-left: 0;
+					padding-right: 0;
+					h5 {
+						margin-right: @margin * 1.5;
+					}
+					.time {
+						right:0;
+					}
+				}
+			}
+		}
+	}
+	@media (min-width: @screenSmallTablet) and (max-width: @screenTabletMax) {
+			position:absolute;
+	}
+}
+.zone-two {
+	@media (min-width: @screenSmallTablet) {
+		width: @siteMinWidth;
+		z-index: @zoneIndexTop / 2;
+	}
+	@media (min-width: @screenSmallTablet) and (max-width: @screenTabletMax) {
+		display: none!important;
+	}
+	@media (min-width: @screenLargerDesktop) {
+		width: @screenPhone;
+	}
+	@media (min-width: @siteMaxWidth) {
+		width: @screenSmallTablet;
+	}
+}
+.zone-three {
+	@media (min-width: @screenSmallTablet) {
+		width: 100%;
+	}
+	@media (min-width: @screenSmallTablet) and (max-width:  @screenSmallTabletMax) {
+		padding-left: @siteMinWidth + @margin;
+	}
+	@media (min-width: @screenTablet) and (max-width: @screenTabletMax) {
+		padding-left: @siteMinWidth + @margin;
+	}
+	@media (min-width: @screenDesktop) {
+		position:absolute;
+		padding-left: (@siteMinWidth * 2) + @margin;
+	}
+	@media (min-width: @screenLargerDesktop) {
+		padding-left: @siteMinWidth + @screenPhone + @margin;
+	}
+	@media (min-width: @siteMaxWidth) {
+		padding-left: @siteMinWidth + @screenSmallTablet + @margin;
+	}
+}

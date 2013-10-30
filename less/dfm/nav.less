@@ -1,0 +1,230 @@
+
+// OFF CANVAS MENU
+body.active { 
+  overflow:hidden; 
+}
+body {
+  [role="main"],
+  #site-header {
+    .transition(0.2s left ease-in);
+    left: 0;
+  }
+}
+body.active {
+  overflow:hidden;
+  [role="main"],
+  #site-header {
+    .transition(0.2s left ease-in);
+    left: @menuWidth;
+  }
+}
+.side-nav { 
+  font-family: "SunRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: @menuWidth;
+  header {
+    border-bottom: 1px solid @gray;
+    height: @headerHeight;
+    position:relative;
+    width:100%;
+    .category {
+		.transition(all 0.3s ease-in);
+    }
+	.back-btn {
+		height:@headerHeight;
+		font-size: 20px;
+		color:white;
+		text-decoration:none;
+		padding: 0 15px;
+		line-height:@headerHeight + 4;
+		position:absolute;
+		left: -60px;
+		margin-right: 60px;
+		.transition(all 0.3s ease-in);
+	}
+    .branding {
+      float:left;
+      margin-left:10px;
+      .opacity(.75);
+      text-align:left;
+    }
+    .settings-toggle {
+      position:absolute;
+      right: 0;
+    }
+  }
+  #menu-wrapper {
+    position: absolute;
+    top: @headerHeight;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    width: @menuWidth;
+  }
+  .menu-scroller {
+    position:absolute;
+    left:0;
+    width:100%;
+    .transition(all 0.3s ease-in);
+  }
+  ul {
+    .nav;
+  border-top:1px solid @gray;
+  position: absolute;
+  width: @menuWidth;
+  a {
+    border-bottom: 1px solid @gray;
+    color: @navbarInverseText;
+    display: block;
+    font-size: @fontSizeLarge;
+    padding: 10px 15px;
+  }
+  a:hover,
+  li.active a {
+    background: @gray;
+    color: @grayLighter;
+  }
+  }
+  .glyphicon-chevron-right {
+    float: right;
+  }
+  [class*="submenu"] {
+    left: @menuWidth;
+    display:none;
+	.favorite.selected:before {
+		content: "\e006";
+	}
+  }
+  .submenu2 { left: @menuWidth * 2; }
+  .submenu3 { left: @menuWidth * 3; }
+  .submenu4 { left: @menuWidth * 4; }
+  .submenu5 { left: @menuWidth * 5; }
+  [class*="submenu"].active {
+    display:block;
+  }
+}
+.side-nav.back-button-in {
+	header {
+		.category {
+			//width: @menuWidth - 120;
+			margin-left: 85px;
+			//margin-right: 60px;
+		}
+		.back-btn {
+			left:0;
+		}
+	}
+	.branding {
+		margin-left: 45px;
+	}
+}
+.branding {
+	.transition(all 0.2s ease-in);
+}
+#sideMainNav {
+	.favorite {
+		display: none;
+	}
+}
+
+.mobile-tabs {
+  background: @bodyBg;
+  @media (min-width: @screenSmallTablet) {
+    display:none;
+  }
+  ul {
+    .nav;
+    .nav-tabs;
+    .nav-justified;
+    border-color:@grayLight;
+    li > a {
+      color: @grayLight;
+      &:hover {
+        background: @brandPrimary;
+        color: @white;
+      }
+    }
+    li.active > a,
+    li.active > a:hover {
+      background: @brandPrimary;
+      color: @white;
+    }
+  }
+}
+.site-settings {
+  background: @bodyBg;
+  display: none;
+  //padding: 15px;
+  header {
+	background: lighten(@bodyBg, 10%);
+    border-bottom: 1px solid @gray;
+    height: @headerHeight;
+    line-height: @headerHeight;
+    .clearfix();
+    h4 {
+      color: @white;
+      float:left;
+      width: 200px;
+      margin:0 0 0 15px;
+      line-height: @headerHeight;
+      text-transform: uppercase;
+    }
+    .close {
+      display:block;
+      float: right;
+      padding:0 15px;
+      text-decoration:none;
+      i {
+        color:@white;
+        font-size:20px;
+        line-height: @headerHeight + 2;
+       }
+    }
+  }
+  .settings-container {
+    padding: 15px;
+  }
+  a {
+    color: @white;
+  }
+  h6 {
+    color: @white;
+    font-size: @fontSizeSmall;
+    text-transform: uppercase;
+  }
+  input {
+    width: 100%;
+  }
+  label {
+    color: @white;
+    font-weight: 200;
+  }
+  .btn-block {
+    margin-top: 20px;
+  }
+  .input-group {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  .list-group {
+    margin: 0;
+    li {
+      background: @grayDark;
+      border-color: @grayDarker;
+      border-width: 1px 0;
+      border-radius: 0;
+      color: @white;
+      &:hover {
+        background: #999;
+        color: @textColor;
+      }
+    }
+  }
+  .well {
+    background: rgba(255,255,255,.3);
+    border: 1px solid @white;
+   }
+}

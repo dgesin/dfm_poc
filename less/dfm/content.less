@@ -1,0 +1,29 @@
+#content {
+  background: white;
+  .transition(all 0.2s ease-in);
+}
+// move down when search enters on mobile
+#content.mobile-search-in {
+  top: @headerHeight;
+  .transition(top 0.2s ease-in);
+  .side-nav {
+    top: @headerHeight * 2;
+    .transition(top 0.2s ease-in);
+  }
+  @media (min-width: @screenPhoneMax) {
+    top:0;
+  }
+}
+.content-panel {
+  .clearfix();
+  padding-top: @headerHeight;
+  .tab-content > .tab-pane {
+    @media (min-width: @screenSmallTablet) {
+      display:block;
+    }
+  }
+  .zone {
+    margin-bottom: -9999px;
+    padding-bottom: 9999px;
+  }
+}

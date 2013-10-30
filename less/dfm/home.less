@@ -1,0 +1,129 @@
+.story-feed {
+  h1, h2, h3 {
+    font-family: @slabFontBoldFamily;
+    line-height: 1.2;
+    font-size: 1.8em;
+    margin: 0;
+  }
+  h5 {
+    font-family: @slabFontFamily;
+    line-height: 1.3;
+    margin: 0;
+    min-height: 44px;
+  }
+  li {
+    border-bottom: 1px solid @borderColor;
+  }
+  a {
+    display: block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .meta {
+    .clearfix();
+    border-top: 1px solid @borderColor;
+    font-size: @fontSizeMini;
+    line-height: 1.6;
+    padding-top: 8px;
+    position:relative;
+  }
+  .time { // minutes elapsed bug
+    color: @gray;
+    font-size: @fontSizeMini;
+    font-family: Arial, sans-serif;
+    position: absolute;
+    right: @margin/2;
+    top: 35%;
+  }
+  .excerpt {
+    font-family: @slabFontFamily;
+    font-size: 1.2em;
+    line-height: 1.5;
+  }
+  .pub-date {
+    display: block;
+  }
+  .social-stats {
+    position: absolute;
+    top: 6px;
+    right: 0;
+  }
+  .social-button {
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 10px;
+    .fc-webicon {
+      margin-bottom: 0;
+    }
+    .count {
+      display: block;
+      .square(20px);
+      text-align: center;
+      font-weight: 700;
+      color: @gray;
+      line-height: 20px;
+      position: relative;
+      background: whiteSmoke;
+      border: 1px solid @borderColor;
+      &:after,
+      &:before {
+      	  bottom: 100%;
+		  border: solid transparent;
+		  content: " ";
+		  height: 0;
+		  width: 0;
+		  position: absolute;
+		  pointer-events: none;
+      }
+      &:after {
+      	  border-color: rgba(245, 245, 245, 0);
+		  border-bottom-color: whiteSmoke;
+		  border-width: 5px;
+		  left: 50%;
+		  margin-left: -5px;
+      }
+      &:before {
+      	  border-color: rgba(221, 221, 221, 0);
+		  border-bottom-color: @borderColor;
+		  border-width: 6px;
+		  left: 50%;
+		  margin-left: -6px;
+      }
+    }
+  }
+}
+@media (min-width: @screenTablet)  {
+  .story-feed {
+    font-size: 115%;
+    .excerpt {
+      font-size: 1.1em;
+    }
+  }
+}
+@media (min-width: @screenDesktop) {
+  .zone-two .story-feed {
+    font-size: 100%;
+  }
+}
+@media (min-width: @screenLargerDesktop) {
+  .zone-two .story-feed {
+    font-size: 110%;
+  }
+  .story-feed {
+    font-size: 140%;
+    .excerpt {
+      font-size: 1em;
+    }
+  }
+}
+@media (min-width: @siteMaxWidth) {
+  .zone-two .story-feed {
+    font-size: 120%;
+  }
+  .story-feed {
+    font-size: 180%;
+    .excerpt {
+      font-size: .8em;
+    }
+  }
+}

@@ -1,0 +1,104 @@
+// Scaffolding
+// Basic and global styles for generating structural layout and page templates
+// -------------------------------------------------------------------------------------------
+
+// Box sizing for all
+* { 
+  .box-sizing(border-box);
+}
+
+// Base settings 
+// -------------
+
+html {
+  font-size: 62.5%;
+  // Touch the Mobile Magic™
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  // Prevents iOS text size adjust after orientation change, without disabling user zoom. (n2.1.1)
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+// Disable iOS/WinMobile font size changes
+@media screen and (max-device-width: @screenPhone) {
+  html {
+    -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+  }
+}
+
+// Body reset
+// -----------
+
+body {
+  margin: 0; // removes default margin (n2.1.1)
+  font-family: @baseFontFamily;
+  font-size: @baseFontSize;
+  line-height: @baseLineHeight;
+  color: @textColor;
+  background-color: @bodyBg;
+}
+
+// Links
+// -----
+
+a {
+  color: @linkColor;
+  text-decoration: none;
+  .transition(0.1s ease-out);
+}
+
+// Hover & Active :: Improves readability when focused and also mouse hovered in all browsers.
+a:hover,
+a:active {
+  outline: 0;
+}
+
+a:hover,
+a:focus {
+  color: @linkColorHover;
+  text-decoration: underline;
+}
+
+// Focus State (n2.1.1)
+a:focus {
+  .tab-focus();
+}
+
+
+// Images
+// -----------------------------------
+
+img {
+  // Responsive images (ensure images don't scale beyond their parents)
+  max-width: 100%; // Part 1: Set a maxium relative to the parent (n2.1.1)
+  width: auto\9; // IE8 needs help adjusting responsive images
+  height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching (n2.1.1)
+  vertical-align: middle; // Match vertical alignment with other comment elements (n2.1.1)
+  border: 0; // (n2.1.1)
+  -ms-interpolation-mode: bicubic;
+}
+
+.img-rounded {
+  border-radius: @borderRadiusLarge;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
+// Addresses margin not present in IE 8/9 and Safari 5. (n2.1.1)
+figure {
+    margin: 0; 
+}
+
+// Prevent max-width from affecting Google Maps (n2.1.1)
+#map-canvas embed,
+#map-canvas img,
+#map-canvas object,
+.google-maps embed,
+.google-maps img,
+.google-maps object {
+  max-width: none!important;
+}
