@@ -34,7 +34,7 @@ array_push($articles,
 			'last_update' => processUpdateOld ($article->pubDate),
 			'description' => processArticle($article->description),
 			'excerpt' => processExcerpt($article->description),
-			'link' => (string) $article->link, 
+			'link' => (string) ($article->link), 
 			'media' => (string) processMedia($article->enclosure['url'])
 			)
 	);
