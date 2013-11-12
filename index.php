@@ -10,7 +10,7 @@
         </div><!-- #latest.scroller -->
 <?php else: ?>
 			<div id="article-page">
-                <div class="feed"></div>
+                <div class="container"></div>
 			</div>
         <div class="content-panel">
                 <?php include('temps/ui/mobile-tabs.php'); ?>

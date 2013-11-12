@@ -34,3 +34,4 @@
 	<script src="<?php echo BASE_URL . DS . JS_DIR; ?>/script.js"></script>
 </body>
 </html>
+<style type="text/css">.container { max-width: 1000px; margin: 0 auto; }</style>

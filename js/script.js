@@ -155,7 +155,6 @@ Handlebars.registerHelper('unless_blank', function(item, block) {
 			$target.html(html); // add to zone 1
 			$target.find('.story-feed a').on('click', function(e){
 				e.preventDefault();
-				console.log(e.currentTarget.id);
 				loadArticle(e.currentTarget.id);
 			});
 			$('#latest').find('.refresh').click(function(e){ 
@@ -171,10 +170,11 @@ Handlebars.registerHelper('unless_blank', function(item, block) {
 	
 	function loadArticle(id) {
 		var source, template, html;
-		var $target = $('#article-page').find('.feed');
+		var $target = $('#article-page').find('.container');
 		document.getElementById("article-page").className = "active";
 		$target.html('<div class="loading"></div>');
 		pathToArticle = baseURL + '/inc/get-article.php?x=' + id;
+		console.log(pathToArticle);
 		$.getJSON(pathToArticle, function(data) {
 			source  = $("#articletmp").html();
 			template = Handlebars.compile(source);
@@ -196,6 +196,10 @@ Handlebars.registerHelper('unless_blank', function(item, block) {
 			html = template(data);
 			$('body').removeClass('active'); // other way to handle this??? smoother trans
 			$target.html(html); // add to zone 2
+			$target.find('.story-feed a').on('click', function(e){
+				e.preventDefault();
+				loadArticle(e.currentTarget.id);
+			});
 			$('#popular').find('.refresh').click(function(e){ 
 				e.preventDefault();
 				loadAltNews(currentAltNewsFeed);
@@ -215,6 +219,10 @@ Handlebars.registerHelper('unless_blank', function(item, block) {
 			html = template(data);
 			$('body').removeClass('active');
 			$target.html(html); // add to zone 3
+			$target.find('.story-feed a').on('click', function(e){
+				e.preventDefault();
+				loadArticle(e.currentTarget.id);
+			});
 			$('#picks').find('.refresh').click(function(e){ 
 				e.preventDefault();
 				loadTopNews(currentTopNewsFeed);

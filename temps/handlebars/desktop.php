@@ -89,19 +89,25 @@
 </script>
 
 <script id="articletmp" type="text/x-handlebars-template">
-	<ul class="story-feed">
 	{{#article}}
-		<li>
-		<h2>{{title}}</h2>
-		{{pub_date}}
-		{{byline}}
-		{{property}}
-		{{last_update}}
-		{{description}}
-		{{excerpt}}
-		{{link}}
-		{{media}}
-		</li>
+		<h1>{{headline}}</h1>
+		{{#unless_blank imgSrc}}
+		<div class="media single-img">
+			<figure>
+				<img src="{{imgSrc}}" alt="{{caption}}" />
+				<figcaption>{{caption}} <span class="photographer">{{credit}}</span></figcaption>
+			</figure>
+		</div>
+		{{/unless_blank}}
+		<div class="meta">
+		  {{#unless_blank byline}}
+		  <p class="byline">By {{byline}}</p>
+		  {{/unless_blank}}
+		  <p class="source">{{source}}</p> 
+		  <p class="timestamp">{{updateTime}} ago</p> 
+		</div>
+		<div class="body-text">
+			{{{body}}}
+		</div>
 	{{/article}}
-	</ul>
 </script>
