@@ -3,7 +3,7 @@
 	<ul class="story-feed">
 	{{#articles}}
 		<li>
-		<a href="{{link}}" id="{{unique}}" target="blank">
+		<a href="{{link}}" id="{{unique}}">
 			<h5>{{title}}</h5>
 			<span class="time">{{last_update}}</span>
 		</a>
@@ -89,39 +89,19 @@
 </script>
 
 <script id="articletmp" type="text/x-handlebars-template">
-<ul class="story-feed">
-<h1>Hello</h1>
-{{#articles}}
-	<li>
-	{{#unless_blank media}}
-	  <img src="{{media}}" alt="Photo of {{title}}" width="100%" style="margin-top:20px;"/>
-	{{/unless_blank}}
-	<a href="{{link}}" id="{{unique}}">
+	<ul class="story-feed">
+	{{#article}}
+		<li>
 		<h2>{{title}}</h2>
-	</a>
-	<p class="excerpt">{{excerpt}}</p>
-	<p class="meta">
-	{{#unless_blank byline}}
-		<strong>By {{byline}}</strong><br />
-	{{/unless_blank}}
-	{{property}}<br />
-	<span class="pub-date">{{pub_date}}</span>
-	<span class="social-stats">
-		<span class="social-button">
-			<span class="fc-webicon small twitter"></span>
-			<span class="count">0</span>
-		</span>
-		<span class="social-button">
-			<span class="fc-webicon small facebook"></span>
-			<span class="count">0</span>
-		</span>
-		<span class="social-button">
-			<span class="fc-webicon small googleplus"></span>
-			<span class="count"><span class="arrow"></span>0</span>
-		</span>
-	</span>
-	</p>
-	</li>
-{{/articles}}
-</ul>
+		{{pub_date}}
+		{{byline}}
+		{{property}}
+		{{last_update}}
+		{{description}}
+		{{excerpt}}
+		{{link}}
+		{{media}}
+		</li>
+	{{/article}}
+	</ul>
 </script>

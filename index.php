@@ -9,7 +9,9 @@
         <div id="latest" class="scroller">
         </div><!-- #latest.scroller -->
 <?php else: ?>
-			<div id="article-page"></div>
+			<div id="article-page">
+                <div class="feed"></div>
+			</div>
         <div class="content-panel">
                 <?php include('temps/ui/mobile-tabs.php'); ?>
                 <div class="tab-content">
