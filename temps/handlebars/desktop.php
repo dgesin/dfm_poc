@@ -3,7 +3,7 @@
 	<ul class="story-feed">
 	{{#articles}}
 		<li>
-		<a href="{{link}}" id="{{unique}}" onclick="loadArticle(e, {{id}})" >
+		<a href="{{link}}" id="{{unique}}">
 			<h5>{{title}}</h5>
 			<span class="time">{{last_update}}</span>
 		</a>
@@ -21,7 +21,7 @@
 		{{#unless_blank media}}
 		  <img src="{{media}}" alt="Photo of {{title}}" width="100%" style="margin-top:20px;"/>
 		{{/unless_blank}}
-		<a href="{{link}}" id="{{unique}}" onclick="loadArticle(e, {{unique}})" >
+		<a href="{{link}}" id="{{unique}}">
 			<h3>{{title}}</h3>
 		</a>
 		<p class="meta">
@@ -58,7 +58,7 @@
 		{{#unless_blank media}}
 		  <img src="{{media}}" alt="Photo of {{title}}" width="100%" style="margin-top:20px;"/>
 		{{/unless_blank}}
-		<a href="{{link}}" id="{{unique}}" onclick="loadArticle(e, {{unique}})" >
+		<a href="{{link}}" id="{{unique}}">
 			<h2>{{title}}</h2>
 		</a>
 		<p class="excerpt">{{excerpt}}</p>
@@ -89,10 +89,19 @@
 </script>
 
 <script id="articletmp" type="text/x-handlebars-template">
-    {{article}}
-	   <h1>{{title}}</h1>
-	   <div class="body-copy">
-	     {{ bodyEncoded }}
-	   </div>
+	<ul class="story-feed">
+	{{#article}}
+		<li>
+		<h2>{{title}}</h2>
+		{{pub_date}}
+		{{byline}}
+		{{property}}
+		{{last_update}}
+		{{description}}
+		{{excerpt}}
+		{{link}}
+		{{media}}
+		</li>
 	{{/article}}
+	</ul>
 </script>

@@ -32,9 +32,9 @@ array_push($articles,
 			'byline' => getAuthorName($article->dc),
 			'property' => getPropertyName($article->dc),
 			'last_update' => processUpdateOld ($article->pubDate),
-			'description' => processArticle($article->description),
+			'description' => (string)($article->data),
 			'excerpt' => processExcerpt($article->description),
-			'link' => (string) $article->link, 
+			'link' => (string) ($article->link), 
 			'media' => (string) processMedia($article->enclosure['url'])
 			)
 	);
@@ -165,3 +165,4 @@ function processSafeText ( $str ) {
 
 // OUTPUT
 echo $json;
+

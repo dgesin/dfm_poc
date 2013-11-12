@@ -9,6 +9,9 @@
         <div id="latest" class="scroller">
         </div><!-- #latest.scroller -->
 <?php else: ?>
+			<div id="article-page">
+                <div class="feed"></div>
+			</div>
         <div class="content-panel">
                 <?php include('temps/ui/mobile-tabs.php'); ?>
                 <div class="tab-content">
@@ -27,7 +30,6 @@
                         </section> <!-- #picks -->
                 </div> <!-- .tab-content -->
         </div> <!-- .content-panel -->
-		<div class="article-page"></div>
 <?php endif; ?>
 </div> <!-- #content -->
 <?php ($mobile) ? require_once('temps/handlebars/mobile.php') : require_once('temps/handlebars/desktop.php'); ?>
@@ -36,20 +38,18 @@
 <style>
 #article-page {
 	position:absolute;
-	top:0
+	top:0;
 	bottom:0;
 	width:100%;
 	background:white;
 	z-index:20000;
 	right: -100%;
-	-webkit-transition: all 8.0s ease-in;
-	-moz-transition: all 8.0s ease-in;
-	transition: all 8.0s ease-in;
 }
-#article-page.active {
+#article-page.active{
 	right:0;
-	-webkit-transition: all 8.0s ease-in;
-	-moz-transition: all 8.0s ease-in;
-	transition: all 8.0s ease-in;
+	-webkit-transition: all 0.3s ease-in;
+	-moz-transition: all 0.3s ease-in;
+	transition: all 0.3s ease-in;
 }
+
 </style>

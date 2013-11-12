@@ -153,6 +153,11 @@ Handlebars.registerHelper('unless_blank', function(item, block) {
 			html = template(data);
 			$('body').removeClass('active');
 			$target.html(html); // add to zone 1
+			$target.find('.story-feed a').on('click', function(e){
+				e.preventDefault();
+				console.log(e.currentTarget.id);
+				loadArticle(e.currentTarget.id);
+			});
 			$('#latest').find('.refresh').click(function(e){ 
 				e.preventDefault();
 				loadLatest(currentLatestFeed);
@@ -164,15 +169,14 @@ Handlebars.registerHelper('unless_blank', function(item, block) {
 	// <a href="link to story here" id="storyID" onclick="loadArticle(storyID)">Link</a>
 	// find way to get id to load the story in OR find some way to pass in the description and title fields of the existing object to the function
 	
-	function loadArticle(e, id) {
-		e.preventDefault();
+	function loadArticle(id) {
 		var source, template, html;
-		var $target = $('#article-page');
-		$target.addClass('active');
+		var $target = $('#article-page').find('.feed');
+		document.getElementById("article-page").className = "active";
 		$target.html('<div class="loading"></div>');
-		xF = (xmlFeed == undefined) ? baseURL + '/inc/get-article.php?x=' + id : xmlFeed;
-		$.getJSON(id, function(data) {
-			source  = $("#articletmp").html(),
+		pathToArticle = baseURL + '/inc/get-article.php?x=' + id;
+		$.getJSON(pathToArticle, function(data) {
+			source  = $("#articletmp").html();
 			template = Handlebars.compile(source);
 			html = template(data);
 			$target.html(html);
