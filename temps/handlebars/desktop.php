@@ -99,13 +99,16 @@
 			</figure>
 		</div>
 		{{/unless_blank}}
-		<div class="meta">
+		<div class="byline-bar">
 		  {{#unless_blank byline}}
-		  <p class="byline">By {{byline}}</p>
+		  <p class="author-name">By {{byline}}</p>
 		  {{/unless_blank}}
-		  <p class="source">{{source}}</p> 
-		  <p class="timestamp">{{updateTime}} ago</p> 
+		  <p class="source">{{source}}</p>
+		  <div class="meta">
+		    <p class="timestamp">Updated {{updateTime}} ago</p> 
+		  </div>
 		</div>
+
 		<div class="body-text">
 			{{{body}}}
 		</div>
