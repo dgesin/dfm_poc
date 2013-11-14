@@ -8,7 +8,7 @@
 		</div>	
 		<?php endif; ?> 
 		<a class="settings-toggle" href="">
-			<i class="glyphicon glyphicon-wrench"></i>
+			<i class="glyphicon glyphicon-cog"></i>
 		</a>
 	</header>
 	<ul id="sideMainNav" class="nav">
