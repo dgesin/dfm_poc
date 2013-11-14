@@ -7,6 +7,145 @@
  * Licensed under the Apache License v2.0
  * http://www.apache.org/licenses/LICENSE-2.0
  */
+#grid {
+  /*  .core () {
+    .spanX (@index) when (@index > 0) {
+      (~".span@{index}, .row .span@{index}") { .span(@index); }
+      .spanX(@index - 1);
+    }
+    .spanX (@_) {}
+	
+    .offsetX (@index) when (@index > 0) {
+      (~".row .offset@{index}") { .offset(@index); }
+      .offsetX(@index - 1);
+    }
+    .offsetX (@_) {}
+	
+    .pushpullX (@index) when (@index > 1) {
+      (~".push@{index}") { .push(@index); }
+      (~".pull@{index}") { .pull(@index); }
+      .pushpullX(@index - 1);
+    }
+    .pushpullX (@_) {}
+
+    .offset (@columns) {
+      margin-left: percentage(@pxColumnWidth * @columns / @siteDefaultWidth);
+    }
+    .span (@columns) {
+      width: percentage(@pxColumnWidth * @columns / @siteDefaultWidth);
+    }
+	.push (@columns) {
+		left:percentage(@pxColumnWidth * @columns / @siteDefaultWidth);
+	}
+	.pull (@columns) {
+		right:percentage(@pxColumnWidth * @columns / @siteDefaultWidth);
+	}
+
+    // generate .spanX, .offsetX, .pushX and .pullX
+    .spanX (@gridColumns);
+    .offsetX (@gridColumns - 1);
+    .pushpullX (@gridColumns - 1);
+  }
+
+  .block-grid () {
+    ul.block-grid { 
+      display: block; 
+      overflow: hidden; 
+      padding: 0; 
+    }
+    ul.block-grid > li { 
+      display: block; 
+      height: auto; 
+      float: left; 
+    }
+    .upX(@index) when (@index > 4) {
+      (~".block-grid.up@{index}") { margin: 0 -8px; }
+      (~".block-grid.up@{index} > li") { width: 100% / @index; padding: 0 8px 8px; }
+      (~".block-grid.up@{index} > li:nth-child(@{index}n+1)") { clear: both; }
+      .upX(@index - 1);
+    }
+    .upX(@index) when (@index = 4) {
+      .block-grid.up4 { margin: 0 -10px; }
+      .block-grid.up4 > li { width: 25%; padding: 0 10px 10px; }
+      .block-grid.up4 > li:nth-child(4n+1) { clear: both; }
+      .upX(@index - 1);
+    }
+    .upX(@index) when (@index = 3) {
+      .block-grid.up3 { margin: 0 -12px; }
+      .block-grid.up3 > li { width: 33.33333%; padding: 0 12px 12px; }
+      .block-grid.up3 > li:nth-child(3n+1) { clear: both; }
+      .upX(@index - 1);
+    }
+    .upX(@index) when (@index = 2) {
+      .block-grid.up2 { margin: 0 -15px; }
+      .block-grid.up2 > li { width: 50%; padding: 0 15px 15px; }
+      .block-grid.up2 > li:nth-child(2n+1) { clear: both; }
+      .upX(@index - 1);
+    }
+    .upX(@index) when (@index = 1) {
+      .block-grid.up1 { margin: 0; }
+      .block-grid.up1 > li { width: 100%; padding: 0 0 15px; }
+    }
+    .upX (@_) {}
+    .upX(@gridColumns);
+  }
+
+  // Mobile 4-column Grid
+  .mobile-grid() {
+    .row .mobile-span1 { width: 25% !important; float: left; padding: 0 15px; }
+    .row .mobile-span1:last-child { float: right; }
+    .row .mobile-span1.end { float: left; }
+    .row.collapse .mobile-span1 { padding: 0; }
+    .row .mobile-span2 { width: 50% !important; float: left; padding: 0 15px; }
+    .row .mobile-span2:last-child { float: right; }
+    .row .mobile-span2.end { float: left; }
+    .row.collapse .mobile-span2 { padding: 0; }
+    .row .mobile-span3 { width: 75% !important; float: left; padding: 0 15px; }
+    .row .mobile-span3:last-child { float: right; }
+    .row .mobile-span3.end { float: left; }
+    .row.collapse .mobile-span3 { padding: 0; }
+    .row .mobile-span4 { width: 100% !important; float: left; padding: 0 15px; }
+    .row .mobile-span4:last-child { float: right; }
+    .row .mobile-span4.end { float: left; }
+    .row.collapse .mobile-span4 { padding: 0; }
+
+    .push1-mobile { left: 25%; }
+    .pull1-mobile { right: 25%; }
+    .push2-mobile { left: 50%; }
+    .pull2-mobile { right: 50%; }
+    .push3-mobile { left: 75%; }
+    .pull3-mobile { right: 75%; }
+
+    // Block Grids
+    .block-grid.mobile > li { float: none; width: 100%; margin-left: 0; }
+    .block-grid > li { clear: none; }
+    .upX(@index) when (@index > 4) {
+      (~".block-grid.mobile-up@{index} > li") { width: 100% / @index; }
+      (~".block-grid.mobile-up@{index} > li:nth-child(@{index}n+1)") { clear: both; }
+      .upX(@index - 1);
+    }
+    .upX(@index) when (@index = 4) {
+      .block-grid.mobile-up4 > li { width: 25%; }
+      .block-grid.mobile-up4 > li:nth-child(4n+1) { clear: both; }
+      .upX(@index - 1);
+    }
+    .upX(@index) when (@index = 3) {
+      .block-grid.mobile-up3 > li { width: 33.33333%; }
+      .block-grid.mobile-up3 > li:nth-child(3n+1) { clear: both; }
+      .upX(@index - 1);
+    }
+    .upX(@index) when (@index = 2) {
+      .block-grid.mobile-up2 > li { width: 50%; }
+      .block-grid.mobile-up2 > li:nth-child(2n+1) { clear: both; }
+      .upX(@index - 1);
+    }
+    .upX(@index) when (@index = 1) {
+      .block-grid.mobile-up1 > li { width: 100%; }
+    }
+    .upX (@_) {}
+    .upX(@gridColumns);
+  }*/
+}
 article,
 aside,
 details,
@@ -192,7 +331,7 @@ h6,
 .h6 {
   margin: 11.326px 0;
   font-family: "SunBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.2;
   color: #444444;
 }
@@ -275,10 +414,8 @@ li {
 .list-inline:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .list-inline:after {
   clear: both;
@@ -287,10 +424,8 @@ li {
 .list-inline:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .list-inline:after {
   clear: both;
@@ -322,6 +457,7 @@ em {
 .page-header {
   margin: 11.326px 0;
   border-bottom: 1px solid #eeeeee;
+  font-weight: 400;
 }
 .page-header h1,
 .page-header h2,
@@ -386,10 +522,8 @@ dd {
 .dl-horizontal:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .dl-horizontal:after {
   clear: both;
@@ -398,10 +532,8 @@ dd {
 .dl-horizontal:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .dl-horizontal:after {
   clear: both;
@@ -693,7 +825,6 @@ input[type="color"]:focus {
   outline: 0;
   outline: thin dotted \9;
   /* IE6-9 */
-
   -webkit-box-shadow: 0 0 8px rgba(82, 168, 236, 0.6);
   box-shadow: 0 0 8px rgba(82, 168, 236, 0.6);
 }
@@ -702,14 +833,12 @@ input[type="checkbox"] {
   margin: 4px 0 0;
   margin-top: 1px \9;
   /* IE8-9 */
-
   line-height: normal;
 }
 select,
 input[type="file"] {
   height: 36.652px;
   /* In IE7, the height of the select element cannot be changed by height, only font-size. TODO: Check if this is still needed when dropping IE7 support */
-
   line-height: 36.652px;
 }
 select[multiple],
@@ -1019,10 +1148,8 @@ select:focus:invalid:focus {
 .form-actions:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .form-actions:after {
   clear: both;
@@ -1031,10 +1158,8 @@ select:focus:invalid:focus {
 .form-actions:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .form-actions:after {
   clear: both;
@@ -1197,10 +1322,8 @@ select:focus:invalid:focus {
   .form-horizontal .control-group:after {
     content: " ";
     /* 1 */
-  
     display: table;
     /* 2 */
-  
   }
   .form-horizontal .control-group:after {
     clear: both;
@@ -1209,10 +1332,8 @@ select:focus:invalid:focus {
   .form-horizontal .control-group:after {
     content: " ";
     /* 1 */
-  
     display: table;
     /* 2 */
-  
   }
   .form-horizontal .control-group:after {
     clear: both;
@@ -2090,10 +2211,8 @@ a.list-group-item.active .list-group-item-text {
 .nav:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .nav:after {
   clear: both;
@@ -2102,10 +2221,8 @@ a.list-group-item.active .list-group-item-text {
 .nav:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .nav:after {
   clear: both;
@@ -2241,10 +2358,8 @@ a.list-group-item.active .list-group-item-text {
 .tabbable:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .tabbable:after {
   clear: both;
@@ -2253,10 +2368,8 @@ a.list-group-item.active .list-group-item-text {
 .tabbable:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .tabbable:after {
   clear: both;
@@ -2295,10 +2408,8 @@ a.list-group-item.active .list-group-item-text {
 .btn-toolbar:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .btn-toolbar:after {
   clear: both;
@@ -2307,10 +2418,8 @@ a.list-group-item.active .list-group-item-text {
 .btn-toolbar:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .btn-toolbar:after {
   clear: both;
@@ -3135,10 +3244,8 @@ a.list-group-item.active .list-group-item-text {
 .clearfix:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .clearfix:after {
   clear: both;
@@ -3334,8 +3441,9 @@ a.list-group-item.active .list-group-item-text {
 .section-header {
   margin: 11.326px 0;
   border-bottom: 1px solid #eeeeee;
+  font-weight: 400;
   color: #cf5300;
-  font-family: "Aleo-Bold", "Rockwell", "Times New Roman", Times, serif;
+  font-family: "Merriweather", "Aleo-Bold", "Rockwell", "Times New Roman", Times, serif;
   margin: 0;
   padding: 11.326px 20px;
 }
@@ -3366,10 +3474,8 @@ a.list-group-item.active .list-group-item-text {
 .meta:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .meta:after {
   clear: both;
@@ -3378,10 +3484,8 @@ a.list-group-item.active .list-group-item-text {
 .meta:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .meta:after {
   clear: both;
@@ -3418,7 +3522,7 @@ figcaption {
   margin-bottom: 10px;
 }
 #article-page h1 {
-  font-family: "Aleo-Bold", "Rockwell", "Times New Roman", Times, serif;
+  font-family: "Merriweather", "Aleo-Bold", "Rockwell", "Times New Roman", Times, serif;
   font-size: 24px;
 }
 @media (min-width: 600px) {
@@ -3575,10 +3679,8 @@ figcaption {
 .site-tools:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .site-tools:after {
   clear: both;
@@ -3587,10 +3689,8 @@ figcaption {
 .site-tools:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .site-tools:after {
   clear: both;
@@ -3731,10 +3831,8 @@ figcaption {
 .content-panel:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .content-panel:after {
   clear: both;
@@ -3743,10 +3841,8 @@ figcaption {
 .content-panel:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .content-panel:after {
   clear: both;
@@ -3858,10 +3954,8 @@ body.active #site-header {
 .side-nav ul:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .side-nav ul:after {
   clear: both;
@@ -3870,10 +3964,8 @@ body.active #site-header {
 .side-nav ul:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .side-nav ul:after {
   clear: both;
@@ -3992,10 +4084,8 @@ body.active #site-header {
 .mobile-tabs ul:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .mobile-tabs ul:after {
   clear: both;
@@ -4004,10 +4094,8 @@ body.active #site-header {
 .mobile-tabs ul:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .mobile-tabs ul:after {
   clear: both;
@@ -4123,10 +4211,8 @@ body.active #site-header {
 .site-settings header:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .site-settings header:after {
   clear: both;
@@ -4135,10 +4221,8 @@ body.active #site-header {
 .site-settings header:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .site-settings header:after {
   clear: both;
@@ -4325,13 +4409,13 @@ body.active #site-header {
 .story-feed h1,
 .story-feed h2,
 .story-feed h3 {
-  font-family: "Aleo-Bold", "Rockwell", "Times New Roman", Times, serif;
+  font-family: "Merriweather", "Aleo-Bold", "Rockwell", "Times New Roman", Times, serif;
   line-height: 1.2;
   font-size: 1.8em;
   margin: 0;
 }
 .story-feed h5 {
-  font-family: "Aleo-Regular", "Rockwell", "Times New Roman", Times, serif;
+  font-family: "Merriweather", "Aleo-Regular", "Rockwell", "Times New Roman", Times, serif;
   line-height: 1.3;
   margin: 0;
   min-height: 44px;
@@ -4355,10 +4439,8 @@ body.active #site-header {
 .story-feed .meta:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .story-feed .meta:after {
   clear: both;
@@ -4367,10 +4449,8 @@ body.active #site-header {
 .story-feed .meta:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .story-feed .meta:after {
   clear: both;
@@ -4384,7 +4464,7 @@ body.active #site-header {
   top: 35%;
 }
 .story-feed .excerpt {
-  font-family: "Aleo-Regular", "Rockwell", "Times New Roman", Times, serif;
+  font-family: "Merriweather", "Aleo-Regular", "Rockwell", "Times New Roman", Times, serif;
   font-size: 1.2em;
   line-height: 1.5;
 }
@@ -4523,7 +4603,7 @@ body.active #site-header {
 }
 @media (min-width: 320px) and (max-width: 767px) {
   .mobile .story-feed h5 {
-    font-family: "Aleo-Bold", "Rockwell", "Times New Roman", Times, serif;
+    font-family: "Merriweather", "Aleo-Bold", "Rockwell", "Times New Roman", Times, serif;
     font-size: 1.4em;
     padding-right: 20px;
   }
