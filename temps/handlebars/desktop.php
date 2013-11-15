@@ -89,6 +89,7 @@
 </script>
 
 <script id="articletmp" type="text/x-handlebars-template">
+	
 	{{#article}}
 		<h1>{{headline}}</h1>
 		{{#unless_blank imgSrc}}
