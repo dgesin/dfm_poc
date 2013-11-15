@@ -1,3 +1,6 @@
+	<div class="banner-bottom">
+		<a href="#"><img src="img/banner-bottom.jpg" alt=""/></a>
+	</div>
 	<footer id="site-footer">
 		<section class="colophon">
 			<p>Copyright notice and other stuff</p>
