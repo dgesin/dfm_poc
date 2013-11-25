@@ -10,6 +10,21 @@
         </div><!-- #latest.scroller -->
 <?php else: ?>
 			<div id="article-page">
+				<div id="article-head">
+					<div class="close-button">
+					<a href="" class="close-button"><img src="img/back-btn.png" alt=""></a>
+					</div>
+					<div id="share-global" class="share-zipper hidden-touch">
+					  	<div class="drawer">
+				            <ul class="share-tools">
+				                    <a class="fc-webicon facebook large" href=""><span class="sr-only">Facebook</span></a></li>
+				                    <a class="fc-webicon twitter large" href=""><span class="sr-only">Twitter</span></a></li>
+				                    <a class="fc-webicon googleplus large" href=""><span class="sr-only">Google Plus</span></a></li>
+				            </ul> <!-- .share-tools -->
+				    	</div> <!-- .drawer -->
+				    	<button class="share-toggle"><span class="glyphicon glyphicon-share-alt"><span class="sr-only">Share</span></span></button>
+					</div> <!-- #share-global -->
+				</div>
                 <div class="container"></div>
 			</div>
         <div class="content-panel">
@@ -32,24 +47,14 @@
         </div> <!-- .content-panel -->
 <?php endif; ?>
 </div> <!-- #content -->
+
 <?php ($mobile) ? require_once('temps/handlebars/mobile.php') : require_once('temps/handlebars/desktop.php'); ?>
 <?php ($mobile) ? require_once('temps/mobile/footer.php') : require_once('temps/footer.php'); ?>
 
+
+
+
 <style>
-#article-page {
-	position:absolute;
-	top:0;
-	bottom:0;
-	width:100%;
-	background:white;
-	z-index:20000;
-	right: -100%;
-}
-#article-page.active{
-	right:0;
-	-webkit-transition: all 0.3s ease-in;
-	-moz-transition: all 0.3s ease-in;
-	transition: all 0.3s ease-in;
-}
+
 
 </style>

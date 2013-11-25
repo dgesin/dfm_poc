@@ -1,3 +1,6 @@
+	<div class="banner-bottom">
+		<a href="#"><img src="img/banner-bottom.jpg" alt=""/></a>
+	</div>
 	<footer id="site-footer">
 		<section class="colophon">
 			<p>Copyright notice and other stuff</p>
@@ -23,6 +26,30 @@
 		$(document).data('baseurl', '<?php echo BASE_URL; ?>');
 		$(document).data('currenturl', '<?php echo $this_url; ?>');
 	</script>
+	
+    <!--share toggles-->
+    <script type="text/javascript">
+	    $shareToggles = $('.container').find($('.share-toggle')),
+        $headerShareToggle = $('#article-head').find($('.share-toggle')),
+    
+    $.each($shareToggles, function() {
+      $(this).on('click', function(e){
+        e.preventDefault();
+        console.log('hello');
+        $(this).parent().parent().toggleClass('active');
+      });
+    });
+    $headerShareToggle.on('click', function(e){
+          $('#article-head').toggleClass('share-active').removeClass('search-active');
+    });
+    $headerSearchToggle.on('click', function(e){
+      $('#article-head').toggleClass('search-active').removeClass('share-active');
+      setTimeout(function(){
+      ($('#article-head').hasClass('search-active')) ? $('#search-field').focus() :  $('#search-field').blur();
+    }, 250);
+    });
+	</script>
+	
 
 	<!-- PLUGINS -->
 	<script src="<?php echo BASE_URL . DS . JS_DIR; ?>/plugins/bootstrap.min.js"></script>
