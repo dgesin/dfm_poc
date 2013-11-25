@@ -526,7 +526,7 @@
 
 // Small grid columns
 .generate-grid-columns(@gridColumns) {
-  .col-sm-X (@index) when (@index > 0) {
+/*  .col-sm-X (@index) when (@index > 0) {
     (~".col-sm-@{index}") { .col-sm-(@index); }
     .col-sm-X((@index - 1));
   }
@@ -538,62 +538,62 @@
   // Apply the styles
   .col-sm-(@columns) {
     width: percentage((@columns / @gridColumns));
-  }
+  }*/
 }
 
 // Large grid columns
 .generate-large-grid-columns(@gridColumns) {
 
-  .col-lg-X (@index) when (@index > 0) {
-    (~".col-lg-@{index}") { .col-lg-(@index); }
-    .col-lg-X((@index - 1));
-  }
-  .col-lg-X (0) {}
+  /*.col-lg-X (@index) when (@index > 0) {
+      (~".col-lg-@{index}") { .col-lg-(@index); }
+      .col-lg-X((@index - 1));
+    }
+    .col-lg-X (0) {}
 
-  // Generate the columns
-  .col-lg-X(@gridColumns);
+    // Generate the columns
+    .col-lg-X(@gridColumns);
 
-  // Apply the styles
-  .col-lg-(@columns) {
-    width: percentage((@columns / @gridColumns));
-  }
+    // Apply the styles
+    .col-lg-(@columns) {
+      width: percentage((@columns / @gridColumns));
+    }
 
-  // Offsets (gaps between columns)
-  .col-offset-X (@index) when (@index > 0) {
-    (~".col-offset-@{index}") { .col-offset-(@index); }
-    .col-offset-X((@index - 1));
-  }
-  .col-offset-X (0) {}
+    // Offsets (gaps between columns)
+    .col-offset-X (@index) when (@index > 0) {
+      (~".col-offset-@{index}") { .col-offset-(@index); }
+      .col-offset-X((@index - 1));
+    }
+    .col-offset-X (0) {}
 
-  // Source ordering
-  .col-push-X (@index) when (@index > 0) {
-    (~".col-push-@{index}") { .col-push-(@index); }
-    .col-push-X((@index - 1));
-  }
-  .col-push-X (0) {}
+    // Source ordering
+    .col-push-X (@index) when (@index > 0) {
+      (~".col-push-@{index}") { .col-push-(@index); }
+      .col-push-X((@index - 1));
+    }
+    .col-push-X (0) {}
 
-  // Source ordering
-  .col-pull-X (@index) when (@index > 0) {
-    (~".col-pull-@{index}") { .col-pull-(@index); }
-    .col-pull-X((@index - 1));
-  }
-  .col-pull-X (0) {}
+    // Source ordering
+    .col-pull-X (@index) when (@index > 0) {
+      (~".col-pull-@{index}") { .col-pull-(@index); }
+      .col-pull-X((@index - 1));
+    }
+    .col-pull-X (0) {}
 
-  // Apply the styles
-  .col-offset-(@columns) {
-    margin-left: percentage((@columns / @gridColumns));
-  }
-  .col-push-(@columns) {
-    left: percentage((@columns / @gridColumns));
-  }
-  .col-pull-(@columns) {
-    right: percentage((@columns / @gridColumns));
-  }
+    // Apply the styles
+    .col-offset-(@columns) {
+      margin-left: percentage((@columns / @gridColumns));
+    }
+    .col-push-(@columns) {
+      left: percentage((@columns / @gridColumns));
+    }
+    .col-pull-(@columns) {
+      right: percentage((@columns / @gridColumns));
+    }
 
-  // Generate .spanX and .offsetX
-  .col-offset-X(@gridColumns);
-  .col-push-X(@gridColumns);
-  .col-pull-X(@gridColumns);
+    // Generate .spanX and .offsetX
+    .col-offset-X(@gridColumns);
+    .col-push-X(@gridColumns);
+    .col-pull-X(@gridColumns);*/
 }
 
 
@@ -662,7 +662,7 @@
 // The Grid -- FOUNDATION
 
 #grid {
-  .core () {
+/*  .core () {
     .spanX (@index) when (@index > 0) {
       (~".span@{index}, .row .span@{index}") { .span(@index); }
       .spanX(@index - 1);
@@ -798,6 +798,6 @@
     }
     .upX (@_) {}
     .upX(@gridColumns);
-  }
+  }*/
 
 }

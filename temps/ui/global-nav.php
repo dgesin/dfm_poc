@@ -25,6 +25,6 @@
 <!-- <li>
 	IN MENU ALWAYS?????
 	<a class="settings-toggle" href="">
-		<i class="glyphicon glyphicon-wrench"></i>
+		<i class="glyphicon glyphicon-cog"></i>
 	</a>
 </li> -->

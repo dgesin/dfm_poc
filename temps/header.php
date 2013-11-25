@@ -20,6 +20,7 @@
 	<script src="<?php echo BASE_URL . DS . JS_DIR; ?>/base/modernizr-2.6.2.js"></script>
 	
 	<!-- STYLESHEETS -->
+	<link href='http://fonts.googleapis.com/css?family=Merriweather:400,700,300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="<?php echo BASE_URL; ?>/style.css" media="screen"/>
 </head>
 
