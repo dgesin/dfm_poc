@@ -1,5 +1,5 @@
 	<div class="banner-bottom">
-		<a href="#"><img src="img/banner-bottom.jpg" alt=""/></a>
+		<a href="#"><img src="img/banner-bottom-mobile.jpg" alt=""/></a>
 	</div>
 	<footer id="site-footer">
 		<section class="colophon">

@@ -4496,6 +4496,10 @@ body.active #site-header {
 .mobile .settings-toggle.active {
   background: rgba(255, 255, 255, 0.2);
 }
+
+.mobile body{
+	overflow-x:hidden;
+}
 .mobile #content {
   position: absolute;
   top: 50px;
@@ -4577,6 +4581,7 @@ body.active #site-header {
 }
 body.mobile.active #content {
   left: 260px !important;
+  overflow-x:hidden;
 }
 #pulldown {
   height: 50px;
