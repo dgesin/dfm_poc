@@ -59,6 +59,7 @@
 	<!-- CUSTOM SCRIPTS -->
 	<script src="<?php echo BASE_URL . DS . JS_DIR; ?>/cookie.js"></script>
 	<script src="<?php echo BASE_URL . DS . JS_DIR; ?>/script.js"></script>
+	<script src="<?php echo BASE_URL . DS . JS_DIR; ?>/hammer.js-1.0.5/dist/hammer.js"></script>
 </body>
 </html>
 <style type="text/css">.container { max-width: 1000px; margin: 0 auto; }</style>

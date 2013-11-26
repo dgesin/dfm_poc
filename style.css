@@ -3441,6 +3441,7 @@ a.list-group-item.active .list-group-item-text {
   margin: 11.326px 0;
   border-bottom: 1px solid #eeeeee;
 <<<<<<< HEAD
+<<<<<<< HEAD
   color: #007cff;
   font-family: "Aleo-Bold", "Rockwell", "Times New Roman", Times, serif;
 ||||||| merged common ancestors
@@ -3451,6 +3452,23 @@ a.list-group-item.active .list-group-item-text {
   color: #cf5300;
   font-family: "Merriweather", "Aleo-Bold", "Rockwell", "Times New Roman", Times, serif;
 >>>>>>> origin/master
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+  font-weight: 400;
+  color: #cf5300;
+  font-family: "Merriweather", "Aleo-Bold", "Rockwell", "Times New Roman", Times, serif;
+||||||| merged common ancestors
+  color: #cf5300;
+  font-family: "Aleo-Bold", "Rockwell", "Times New Roman", Times, serif;
+=======
+  color: #007cff;
+  font-family: "Aleo-Bold", "Rockwell", "Times New Roman", Times, serif;
+>>>>>>> Temporary merge branch 2
+=======
+  font-weight: 400;
+  color: #cf5300;
+  font-family: "Merriweather", "Aleo-Bold", "Rockwell", "Times New Roman", Times, serif;
+>>>>>>> 14ce38173d7604b02fa65d658d2de803a90c6a30
   margin: 0;
   padding: 11.326px 20px;
 }
