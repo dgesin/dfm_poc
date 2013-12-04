@@ -1,10 +1,7 @@
-	<div class="banner-bottom">
-		<a href="#"><img src="img/banner-bottom-mobile.jpg" alt=""/></a>
-	</div>
 	<footer id="site-footer">
-		<section class="colophon">
-			<p>Copyright notice and other stuff</p>
-		</section>
+		<div class="banner-bottom">
+			<a href="#"><img src="img/banner-bottom-mobile.jpg" alt=""/></a>
+		</div>
 	</footer><!-- #site-footer -->
 	
 	<!-- JAVASCRIPTS -->

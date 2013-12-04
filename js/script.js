@@ -182,10 +182,9 @@ Handlebars.registerHelper('unless_blank', function(item, block) {
 			$target.html(html);
 		}); //getJSON
 	}
-	function closeArticle(){
-		var $target = $('#article-page').find('.container');
-		document.getElementById("article-page").className = "close";
-		$target.html ('<div class="loading"></div>');
+	function closeArticle(e){
+		e.preventDefault();
+		document.getElementById("article-page").className('');
 	}
 
 	function loadAltNews(xmlFeed) {

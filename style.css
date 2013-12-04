@@ -3815,7 +3815,7 @@ figcaption {
 #site-footer {
   background: #007cff;
   height: 50px;
-  width: 100%;
+  width:100%;
 }
 .colophon {
   background: transparent;
@@ -3833,7 +3833,10 @@ figcaption {
 }
 .banner-bottom a img{
 	width:100%;
-	
+}
+.article-ad{
+	margin:10% auto 0 auto;
+	width:80%;
 }
 #content {
   background: white;
@@ -4736,12 +4739,6 @@ body.mobile.active #content {
 	-moz-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 }
-#article-page.close{
-	right:-100%;
-	-webkit-transition: all 0.3s ease-out;
-	-moz-transition: all 0.3s ease-out;
-	transition: all 0.3s ease-out;
-}
 #article-head{
 	height:50px;
 	background:#007cff;
@@ -4895,6 +4892,7 @@ fieldset[disabled] [class*="-toggle"].active {
   clear: both;
 }
 [class*="-zipper"] button {
+	border:none;
   position: relative;
   float: right;
   width: 50px;

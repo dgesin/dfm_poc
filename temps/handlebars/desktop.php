@@ -10,6 +10,9 @@
 		</li>
 	{{/articles}}
 	</ul>
+	<div class="site-footer">
+		<img src="img/footer.jpg" alt="Digital First Media logo and footer placeholder.">
+	</div>
 </script>
 
 <!-- this template populates the center column -->
@@ -114,4 +117,10 @@
 			{{{body}}}
 		</div>
 	{{/article}}
+	<div class="article-ad">
+		<img src ="img/chevy300x250.jpg" alt="Chevrolet advertisement">
+	</div>
+	<div class="site-footer">
+		<img src="img/footer.jpg" alt="Digital First Media logo and footer placeholder.">
+	</div>
 </script>
