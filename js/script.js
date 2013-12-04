@@ -156,6 +156,7 @@ Handlebars.registerHelper('unless_blank', function(item, block) {
 			$target.find('.story-feed a').on('click', function(e){
 				e.preventDefault();
 				loadArticle(e.currentTarget.id);
+				$('html,body').scrollTop(0);
 			});
 			$('#latest').find('.refresh').click(function(e){ 
 				e.preventDefault();
